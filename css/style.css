@@ -594,9 +594,14 @@ a {
     background: #333;
     position: relative;
     border-radius: 50%;
-    font-size: 22px;
+    font-size: 30px;
     margin: 0 10px; }
-    .site-footer .social-item > span {
+
+    .codewars{
+      width: 30px;
+    }
+
+    .site-footer .social-item > i, .codewars {
       position: absolute;
       top: 50%;
       left: 50%;
