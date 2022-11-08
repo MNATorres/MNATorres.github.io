@@ -142,12 +142,27 @@ a {
       color: #bac964 !important; }
 
 .site-hero {
-  background-color: #ccc;
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
   position: relative;
   overflow: hidden; }
+
+  #particles-js {
+    height: 100vh; 
+    width: 100%;
+    position: absolute;
+    z-index: -1;
+    background-size: cover;
+    object-fit: cover;
+  }
+
+  .miFoto{
+    width: 400px;
+    border: 5px solid #bac964;
+    border-radius: 400px;
+  }
+
   .site-hero, .site-hero .row {
     height: 100vh;
     min-height: 800px; }
