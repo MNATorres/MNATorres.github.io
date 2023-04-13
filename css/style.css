@@ -759,8 +759,29 @@ a {
   .slide img{
     object-fit: contain;
   }
+
+  @media screen and (max-width: 700px) {
+    .slider .slide {
+      height: 20px;
+      width: 90px;
+    }
+    .slide img{
+      object-fit: contain;
+      width: 90%;
+    }
+
+    .slider .slide-track {
+      -webkit-animation: scroll 10s linear infinite;
+              animation: scroll 10s linear infinite;
+      display: flex;
+      width: calc(180px * 14);
+    }
+    
+  }
   
   /* Fin de Carrousel */
+
+  
 
   /*Prev de imagenes*/
 
