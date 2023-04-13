@@ -761,3 +761,16 @@ a {
   }
   
   /* Fin de Carrousel */
+
+  /*Prev de imagenes*/
+
+  .d-flex{
+    max-width: 90%;
+  }
+
+  .d-flex image{
+    max-width: 90%;
+    padding: 0;
+  }
+
+  /* Fin de Prev de imagenes*/
