@@ -769,13 +769,6 @@ a {
       object-fit: contain;
       width: 90%;
     }
-
-    .slider .slide-track {
-      -webkit-animation: scroll 10s linear infinite;
-              animation: scroll 10s linear infinite;
-      display: flex;
-      width: calc(180px * 14);
-    }
     
   }
   
