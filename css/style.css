@@ -146,7 +146,9 @@ a {
   background-position: center center;
   background-repeat: no-repeat;
   position: relative;
-  overflow: hidden; }
+  overflow: hidden; 
+  margin-bottom: 150px;
+}
 
   #particles-js {
     height: 100vh; 
@@ -687,95 +689,103 @@ a {
 
   /*********************************************************************************/
 
-  /* Carrousel */
 
-  .Carrousel{
-    align-items: center;
-    width: 100%;
-    display: flex;
-    padding-top: 100px;
-    justify-content: center;
-  }
-  @-webkit-keyframes scroll {
-    0% {
-      -webkit-transform: translateX(0);
-              transform: translateX(0);
-    }
-    100% {
-      -webkit-transform: translateX(calc(-250px * 7));
-              transform: translateX(calc(-250px * 7));
-    }
-  }
-  
-  @keyframes scroll {
-    0% {
-      -webkit-transform: translateX(0);
-              transform: translateX(0);
-    }
-    100% {
-      -webkit-transform: translateX(calc(-250px * 7));
-              transform: translateX(calc(-250px * 7));
-    }
-  }
-  .slider {
-    
-    /*box-shadow: 0 10px 20px -5px rgba(0, 0, 0, .125);*/
-    height: 100px;
-    margin: auto;
-    overflow: hidden;
-    position: relative;
-    width: 95%;
-    
-  }
-  .slider::before, .slider::after {
-    background: linear-gradient(to right, #212529 0%, rgba(255, 255, 255, 0) 100%);
-    content: "";
-    height: 100px;
-    position: absolute;
-    width: 200px;
-    z-index: 2;
-  }
-  .slider::after {
-    right: 0;
-    top: 0;
-    -webkit-transform: rotateZ(180deg);
-            transform: rotateZ(180deg);
-  }
-  .slider::before {
-    left: 0;
-    top: 0;
-  }
-  .slider .slide-track {
-    -webkit-animation: scroll 40s linear infinite;
-            animation: scroll 40s linear infinite;
-    display: flex;
-    width: calc(250px * 14);
-  }
-  .slider .slide {
-    height: 50px;
-    width: 250px;
-  }
-  
-  .slide img{
-    object-fit: contain;
-  }
+  /* Carousel Dos */
 
-  @media screen and (max-width: 700px) {
-    .slider .slide {
-      height: 20px;
-      width: 90px;
-    }
-    .slide img{
-      object-fit: contain;
-      width: 90%;
-    }
+  @import url('https://fonts.googleapis.com/css?family=Montserrat');
 
+
+.carousel-dos {
+  font-family: 'Montserrat', sans-serif;
+  background-color: #eee;
+  color: #111;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+:root {
+  --marquee-width: 80vw;
+  --marquee-height: 10vh;
+  /* --marquee-elements: 12; */ /* defined with JavaScript */
+  --marquee-elements-displayed: 5;
+  --marquee-element-width: calc(var(--marquee-width) / var(--marquee-elements-displayed));
+  --marquee-animation-duration: calc(var(--marquee-elements) * 3s);
+}
+
+.marquee {
+  width: 100%;
+  height: var(--marquee-height);
+  background-color: #222;
+  color: #eee;
+  overflow: hidden;
+  position: relative;
+}
+.marquee:before, .marquee:after {
+  position: absolute;
+  top: 0;
+  width: 10rem;
+  height: 100%;
+  content: "";
+  z-index: 1;
+}
+.marquee:before {
+  left: 0;
+  background: linear-gradient(to right, #1b1a1a 0%, transparent 100%);
+}
+.marquee:after {
+  right: 0;
+  background: linear-gradient(to left, #1b1a1a 0%, transparent 100%);
+}
+.marquee-content {
+  list-style: none;
+  height: 100%;
+  display: flex;
+  animation: scrolling var(--marquee-animation-duration) linear infinite;
+}
+/* .marquee-content:hover {
+  animation-play-state: paused;
+} */
+@keyframes scrolling {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(calc(-1 * var(--marquee-element-width) * var(--marquee-elements))); }
+}
+.marquee-content li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* text-align: center; */
+  flex-shrink: 0;
+  width: var(--marquee-element-width);
+  max-height: 100%;
+  font-size: calc(var(--marquee-height)*3/4); /* 5rem; */
+  white-space: nowrap;
+}
+
+.marquee-content li img {
+  width: 50%;
+  margin: 0 auto;
+  /* height: 100%; */
+  display: flex;
+}
+
+@media (max-width: 600px) {
+  html { font-size: 12px; }
+  :root {
+    --marquee-width: 100vw;
+    --marquee-height: 10vh;
+    --marquee-elements-displayed: 3;
   }
-  
-  /* Fin de Carrousel */
+  .marquee:before, .marquee:after { width: 5rem; }
+}
+
+  /* Fin Carousel Dos */
 
    
-
   
 
   /*Prev de imagenes*/
