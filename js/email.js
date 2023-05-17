@@ -1,7 +1,7 @@
 document.querySelector(".site-form").addEventListener("submit", (event) => {
   event.preventDefault(); // Evitar que el formulario se envíe de forma predeterminada
 
-  const url = "http://localhost:3000/send-message"; // URL de la API a la que deseas hacer la solicitud POST
+  const url = "https://mi-perfil-back.vercel.app/send-message"; // URL de la API a la que deseas hacer la solicitud POST
 
   const formData = new FormData(event.target); // Obtener los datos del formulario
 
